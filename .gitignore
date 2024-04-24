@@ -1,0 +1,20 @@
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
+
+# Distribution / packaging
+venv/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+### Django ###
+__pycache__/
+
+.env
+db.sqlite3
