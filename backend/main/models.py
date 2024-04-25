@@ -1,11 +1,13 @@
 from django.db import models
 
+import uuid
+
 #Models para criação das tabelas no modelo relacional
 
 from datetime import date
 
 class Data(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False) 
+    data_id = models.BigIntegerField(primary_key=True, editable=False) 
     data = models.DateField(default=date.today, null=False, blank=False)
 
     class Meta: 
@@ -15,7 +17,7 @@ class Data(models.Model):
         return self.data
 
 class Lembrete(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False) 
+    lembrete_id = models.BigIntegerField(primary_key=True, editable=False)
     nome = models.CharField(max_length=200, null=False, blank=False, default='null')
     data = models.ForeignKey(Data, on_delete=models.CASCADE, null=False, blank=False)
     
