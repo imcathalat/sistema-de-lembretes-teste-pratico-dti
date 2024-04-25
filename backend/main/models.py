@@ -7,7 +7,7 @@ import uuid
 from datetime import date
 
 class Data(models.Model):
-    data_id = models.BigIntegerField(primary_key=True, editable=False) 
+    data_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False) 
     data = models.DateField(default=date.today, null=False, blank=False)
 
     class Meta: 
@@ -17,7 +17,7 @@ class Data(models.Model):
         return self.data
 
 class Lembrete(models.Model):
-    lembrete_id = models.BigIntegerField(primary_key=True, editable=False)
+    lembrete_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     nome = models.CharField(max_length=200, null=False, blank=False, default='null')
     data = models.ForeignKey(Data, on_delete=models.CASCADE, null=False, blank=False)
     
