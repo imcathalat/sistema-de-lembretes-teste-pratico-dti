@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Lembrete
 
-# Register your models here.
+# Registro das models para a interface admin do django
+
+admin.site.register(Lembrete)
