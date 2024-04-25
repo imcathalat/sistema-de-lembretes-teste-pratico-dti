@@ -5,7 +5,7 @@ from django.db import models
 from datetime import date
 
 class Lembrete(models.Model):
-    nome = models.CharField(max_length=100, null=False)
+    nome = models.CharField(max_length=200, null=False)
     data = models.DateField(default=date.today, null=False)
 
     class Meta:
