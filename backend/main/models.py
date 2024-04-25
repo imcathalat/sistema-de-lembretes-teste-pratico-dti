@@ -4,13 +4,25 @@ from django.db import models
 
 from datetime import date
 
-class Lembrete(models.Model):
-    nome = models.CharField(max_length=200, null=False, blank=False, default='null')
+class Data(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False) 
     data = models.DateField(default=date.today, null=False, blank=False)
 
+    class Meta: 
+        db_table = 'data'
+
+    def __str__(self):
+        return self.data
+
+class Lembrete(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False) 
+    nome = models.CharField(max_length=200, null=False, blank=False, default='null')
+    data = models.ForeignKey(Data, on_delete=models.CASCADE, null=False, blank=False)
+    
     class Meta:
         db_table = 'lembrete'
 
     def __str__(self):
         return self.nome
+    
 
