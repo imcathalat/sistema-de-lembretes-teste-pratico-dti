@@ -42,9 +42,12 @@ class LembretesViewTestCase(TestCase):
             "nome": "show da madona no rj",
             "data": "2024-04-05"
         }
+        print(data)
         response = self.client.post(url, data)
+        print(response)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         serializer = LembreteSerializer(data=data)
         self.assertTrue(serializer.is_valid())
 
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        
