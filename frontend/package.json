@@ -12,6 +12,7 @@
     "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'"
   },
   "dependencies": {
+    "@vuepic/vue-datepicker": "^8.5.0",
     "axios": "^1.6.8",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
@@ -23,6 +24,7 @@
     "cypress": "^13.7.2",
     "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
+    "sass": "^1.75.0",
     "start-server-and-test": "^2.0.3",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.8",
