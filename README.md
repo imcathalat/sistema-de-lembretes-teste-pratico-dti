@@ -14,6 +14,7 @@ O sistema permite adição, exclusão e listaegem dos lembretes em ordem cronol�
 3. [Node.js](https://nodejs.org/en/download)
 
 ## Interface
+![Criação do BD no pgAdmin4](images/sistema-lembrete.png)
 
 ## Instalação
 
