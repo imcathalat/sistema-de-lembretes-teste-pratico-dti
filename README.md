@@ -93,17 +93,22 @@ No macOs Linux:
   source venv/bin/activate
   ```
 
-2. Instale as dependências:
+2. Entre na pasta frontend:
+   ```bash
+   cd frontend
+   ```
+
+3. Instale as dependências:
    ```bash
    npm install
    ```
    
-3. Rode o servidor frontend:
+4. Rode o servidor frontend:
    ```bash
    npm run dev
    ```
    
-4. Digite a url fornecida pelo servidor no seu navegador:
+5. Digite a url fornecida pelo servidor no seu navegador:
    ```bash
    http://localhost:5173/
    ```
