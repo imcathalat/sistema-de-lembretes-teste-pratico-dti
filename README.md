@@ -24,7 +24,7 @@ A primeira coisa a se fazer é configurar o projeto no lado servidor.
 
 1. Clone esse repositório:
    ```bash
-   colocar aqui o link do repo
+   https://github.com/imcathalat/sistema-de-lembretes-teste-pratico-dti.git
    ```
    
 2. Na pasta clonada raiz, crie e ative o ambiente virtual:
@@ -46,7 +46,8 @@ source venv/bin/activate
    ```
    
 4. Crie um banco de dados no PostgreSQL através do pgAdmin4 ou do psql:
-- colocar imagem aqui
+   ![Criação do BD no pgAdmin4](images/criacao-bd-pgAdmin.png)
+
   
 5. Renomeie o arquivo .env.example para .env
   ```bash
