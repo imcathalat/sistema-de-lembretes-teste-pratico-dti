@@ -2,6 +2,7 @@ import './assets/main.css'
 import './assets/tailwind.css'
 
 import { createApp } from 'vue'
+import 'primeicons/primeicons.css'
 
 import App from './App.vue'
 import router from './router'
