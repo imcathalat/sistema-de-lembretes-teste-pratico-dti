@@ -15,6 +15,8 @@ class LembreteList(APIView):
 
     def post(self, request):
         serializer = LembreteSerializer(data=request.data)
+        print(serializer)
+        print(serializer.is_valid())
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -22,9 +24,7 @@ class LembreteList(APIView):
 
 class LembreteDelete(APIView):
     def delete(self, request, lembrete_id):
-        print(lembrete_id)
-        print(Lembrete.objects.get(pk=lembrete_id))
-        try:
+        try: 
             lembrete = Lembrete.objects.get(pk=lembrete_id)
         except Lembrete.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)

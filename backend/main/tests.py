@@ -22,7 +22,7 @@ class LembretesViewTestCase(TestCase):
 
     def setUp(self):
         self.lembrete = Lembrete.objects.create(
-            nome='Entrega do teste prático da dti',
+            nome='Entrega do Teste prático da dti',
             data='2024-04-28'
         )
 
@@ -40,14 +40,35 @@ class LembretesViewTestCase(TestCase):
         url = reverse('lembretes')
         data = {
             "nome": "show da madona no rj",
-            "data": "2024-04-05"
+            "data": "2024-05-04"
         }
-        print(data)
         response = self.client.post(url, data)
         print(response)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         serializer = LembreteSerializer(data=data)
         self.assertTrue(serializer.is_valid())
+
+    def test_delete_lembrete(self):
+        url = reverse('excluir_lembrete', kwargs={'lembrete_id': str(self.lembrete.lembrete_id)})
+
+        response = self.client.delete(url)
+
+        print(response)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_proibir_insercao_data_no_passado(self):
+        url = reverse('lembretes')
+        data = {
+            "nome": "Hackaton TechTalente",
+            "data": "2024-04-04"
+        }
+
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+        serializer = LembreteSerializer(data=data)
+        self.assertFalse(serializer.is_valid())
+
 
         
