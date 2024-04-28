@@ -24,7 +24,7 @@ A primeira coisa a se fazer é configurar o projeto no lado servidor.
 
 1. Clone esse repositório:
    ```bash
-   colocar aqui o link do repo
+   https://github.com/imcathalat/sistema-de-lembretes-teste-pratico-dti.git
    ```
    
 2. Na pasta clonada raiz, crie e ative o ambiente virtual:
