@@ -46,7 +46,8 @@ source venv/bin/activate
    ```
    
 4. Crie um banco de dados no PostgreSQL através do pgAdmin4 ou do psql:
-- colocar imagem aqui
+   ![Criação do BD no pgAdmin4](images/criacao-bd-pgAdmin.png)
+
   
 5. Renomeie o arquivo .env.example para .env
   ```bash
