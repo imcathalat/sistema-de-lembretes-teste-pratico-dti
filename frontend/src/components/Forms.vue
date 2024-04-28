@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
-import '@vuepic/vue-datepicker/dist/main.css';
 
 
 const name = ref('');
@@ -121,10 +120,10 @@ onMounted(() => {
         </div>
         <div class="shadow-md rounded-md p-6 lembretes">
             <ul class="list-[square] text-pink-500">
-                <li v-for="(array, chave) in lembretesPorData" :key="chave">
-                        {{ chave }}
+                <li v-for="(array, chave) in Object.keys(lembretesPorData).sort((a, b) => new Date(b) - new Date(a))" :key="chave">
+                        {{ array }}
                     <ul>
-                        <li v-for="lembrete in array" v-bind:key="lembrete.lembrete_id">
+                        <li v-for="lembrete in lembretesPorData[array]" v-bind:key="lembrete.lembrete_id">
                             {{ lembrete.nome }}
                             <button @click="excluirLembrete(lembrete.lembrete_id)">Excluir</button>
                         </li>
