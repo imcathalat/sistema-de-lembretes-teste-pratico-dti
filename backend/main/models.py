@@ -9,6 +9,7 @@ from datetime import date
 class Lembrete(models.Model):
     lembrete_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     nome = models.CharField(max_length=200, null=False, blank=False)
+    data = models.DateField(null=False, blank=False, default=date.today)
     
     class Meta:
         db_table = 'lembrete'
