@@ -66,7 +66,6 @@ source venv/bin/activate
    ```
 8. Migre o banco de dados:
 ```bash
-python manage.py makemigrations
 python manage.py migrate
 ```
 
@@ -74,6 +73,11 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+10. Verifique se o servidor esta aberto na porta 8000: - É importante que esteja
+    ```bash
+    http://127.0.0.1:8000/
+    ```
 
 ## Frontend
 Com o servidor backend funcionando, é hora de colocar o frontend para funcionar. 
@@ -94,17 +98,22 @@ No macOs Linux:
   source venv/bin/activate
   ```
 
-2. Instale as dependências:
+2. Entre na pasta frontend:
+   ```bash
+   cd frontend
+   ```
+
+3. Instale as dependências:
    ```bash
    npm install
    ```
    
-3. Rode o servidor frontend:
+4. Rode o servidor frontend:
    ```bash
    npm run dev
    ```
    
-4. Digite a url fornecida pelo servidor no seu navegador:
+5. Digite a url fornecida pelo servidor no seu navegador: - Verifique se esta na porta 5173
    ```bash
    http://localhost:5173/
    ```
