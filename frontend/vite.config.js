@@ -8,9 +8,15 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  css: {
+    preprocessorOptions:{
+      scss: {aditionalData: `@import "src/scss/_variables.scss";`}
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  base: './',
 })
