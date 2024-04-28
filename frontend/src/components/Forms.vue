@@ -9,6 +9,12 @@ const date = ref('');
 const lembretes = ref([]);
 const lembretesPorData = ref([]);
 
+function formatarDataBr(data) {
+    const partes = data.split('-');
+    const dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+    return dataFormatada;
+}
+
 function agruparLembretesPorData() {
     const groupedLembretes = {};
 
@@ -23,35 +29,21 @@ function agruparLembretesPorData() {
         groupedLembretes[lembrete.data].push(lembrete);
     });
 
-    console.log(groupedLembretes);
-
     lembretesPorData.value = groupedLembretes;
 
-    console.log(lembretesPorData.value);
-
     const chaves = Object.keys(lembretesPorData.value);
-
-// Itera sobre as chaves
-chaves.forEach(chave => {
-    // Acessa o array correspondente à chave atual
-    const array = lembretesPorData.value[chave];
-
-    // Imprime a chave
-    console.log(chave + ':');
-
-    // Itera sobre os elementos do array
-    array.forEach(elemento => {
-        // Imprime cada elemento do array
-        console.log('- ' + elemento.nome); // Supondo que 'nome' seja o atributo que você deseja imprimir
-    });
-});
 }
 
 function getLembretes() {
     axios.get('/lembretes/')
         .then(response => {
-            lembretes.value = response.data;
-            return response.data;
+            
+            lembretes.value = response.data.map(lembrete => ({
+                ...lembrete, // cópia do objeto lembrete que esta sendo iterado
+                data: formatarDataBr(lembrete.data) // substrituição do atributo data desse objeto que foi copiado
+            }));
+
+            console.log("lembretes: ", lembretes.value);
 
         })
         .then(() => {
