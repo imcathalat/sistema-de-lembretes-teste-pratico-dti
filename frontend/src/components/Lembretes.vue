@@ -2,7 +2,6 @@
 import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 
-
 const name = ref('');
 const date = ref('');
 
@@ -74,7 +73,7 @@ function postLembrete() {
         })
 }
 
-function excluirLembrete(idLembrete) {
+function deleteLembrete(idLembrete) {
     console.log(idLembrete)
     axios.delete(`/lembretes/${idLembrete}/`)
         .then(response => {
@@ -93,7 +92,9 @@ onMounted(() => {
 </script>
 
 <template>
+    
     <div class="max-w-lg mx-auto">
+        <h1 class="title">Novo Lembrete</h1>
         <div class="shadow-md rounded-md p-6 mb-6 lembrete-form">
             <form v-on:submit.prevent="postLembrete" method="post">
                 <fieldset>
@@ -110,14 +111,16 @@ onMounted(() => {
                 </fieldset>
             </form>
         </div>
+        <h1 class="title">Lembretes</h1>
         <div class="shadow-md rounded-md p-6 lembretes">
             <ul class="list-[square] text-pink-500">
                 <li v-for="(array, chave) in Object.keys(lembretesPorData).sort((a, b) => new Date(a) - new Date(b))" :key="chave">
-                        {{ array }}
+                        <strong>{{ array }}</strong>
                     <ul>
                         <li v-for="lembrete in lembretesPorData[array]" v-bind:key="lembrete.lembrete_id">
                             {{ lembrete.nome }}
-                            <button @click="excluirLembrete(lembrete.lembrete_id)">Excluir</button>
+                            
+                            <button @click="deleteLembrete(lembrete.lembrete_id)"><i class="pi pi-trash"></i></button>
                         </li>
                     </ul>
                 </li>
@@ -128,6 +131,14 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
+.title {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    display: block;
+    color: #F072A9;
+    font-weight: bold;
+    font-size: 1rem;
+}
 .lembrete-form label {
     display: block;
     margin-top: 0.6rem;
