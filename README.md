@@ -74,6 +74,11 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+10. Verifique se o servidor esta aberto na porta 8000: - É importante que esteja
+    ```bash
+    http://127.0.0.1:8000/
+    ```
+
 ## Frontend
 Com o servidor backend funcionando, é hora de colocar o frontend para funcionar. 
 
@@ -108,7 +113,7 @@ No macOs Linux:
    npm run dev
    ```
    
-5. Digite a url fornecida pelo servidor no seu navegador:
+5. Digite a url fornecida pelo servidor no seu navegador: - Verifique se esta na porta 5173
    ```bash
    http://localhost:5173/
    ```
