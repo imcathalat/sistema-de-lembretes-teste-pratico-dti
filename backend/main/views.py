@@ -20,4 +20,17 @@ class LembreteList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class LembreteDelete(APIView):
+    def delete(self, request, lembrete_id):
+        print(lembrete_id)
+        print(Lembrete.objects.get(pk=lembrete_id))
+        try:
+            lembrete = Lembrete.objects.get(pk=lembrete_id)
+        except Lembrete.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        lembrete.delete()
+        return Response({'message': 'Lembrete excluído com sucesso.'}, status=status.HTTP_204_NO_CONTENT)
+
+
 

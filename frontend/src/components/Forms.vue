@@ -4,58 +4,77 @@ import axios from 'axios'
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
-const selectedDate = ref(null);
-const formattedDate = computed(() => {
-  if (selectedDate.value) {
-    const date = new Date(selectedDate.value);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
-  return '';
-});
+
+const name = ref('');
+
+const lembretes = ref([]);
 
 function postLembrete(){
-    
-}
+    const nome = name.value;
 
+    axios.post('/lembretes/', {nome})
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.error('Erro: ', error);
+    })
+}
 function getLembretes() {
     axios.get('/lembretes/')
     .then(response => {
-        console.log('data', response.data)
+        console.log('data', response.data, response.data.pk)
+        lembretes.value = response.data;
+        console.log(lembretes.value.lembrete_id)
+        console.log('lembretes: ', lembretes.value);
+        return response.data;
+        
     })
     .catch(error => {
         console.log('error', error)
     })
 }
 
-function postLembretes(){
-    
+function excluirLembrete(idLembrete) {
+    console.log(idLembrete)
+    axios.delete(`/lembretes/${idLembrete}/`)
+    .then(response => {
+        console.log('Lembrete excluído:', idLembrete);
+        // Atualizar a lista de lembretes após a exclusão
+        getLembretes();
+    })
+    .catch(error => {
+        console.error('Erro ao excluir lembrete:', error);
+    })
 }
 
 onMounted(() => {
     getLembretes()
 })
+
 </script>
 
 <template>
     <div class="lembrete-form">
-        <form action="">
+        <form v-on:submit.prevent="postLembrete" method="post">
             <fieldset>
                 <legend>Lembrete</legend>
 
                 <label for="">Nome</label>
-                <input type="text" class="input-field" name='nome-lembrete' required/>
+                <input type="text" v-model="name" class="input-field" required/>
 
-                <div>
-                    <label for="">Data</label>
-                     <datepicker class="datepicker" v-model="selectedDate" :enable-time-picker="false"/>
-                </div>
 
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"/>
             </fieldset>
         </form>
+    </div>
+    <div class="lembretes"
+        v-for="lembrete in lembretes"
+        v-bind:key="lembrete.pk"
+    >
+        {{ lembrete.nome }}
+
+        <button @click="excluirLembrete(lembrete.lembrete_id)">Excluir</button>
     </div>
 </template>
 
@@ -64,6 +83,7 @@ onMounted(() => {
 .lembrete-form{
 	max-width: 250px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    display: block;
 }
 .lembrete-form label{
 	display:block;
@@ -168,7 +188,7 @@ input ::placeholder {
     --dp-border-color: #FFC2DC;
     --dp-menu-border-color: #ddd;
     --dp-border-color-hover: #C94A81;
-    --dp-disabled-color: #f6f6f6;
+    --dp-disabled-color: #C94A81;
     --dp-scroll-bar-background: #f3f3f3;
     --dp-scroll-bar-color: #959595;
     --dp-success-color: #76d275;
@@ -176,7 +196,7 @@ input ::placeholder {
     --dp-icon-color: #C94A81;
     --dp-danger-color: #ff6f60;
     --dp-marker-color: #ff6f60;
-    --dp-tooltip-color: #fafafa;
+    --dp-tooltip-color: #C94A81;
     --dp-disabled-color-text: #8e8e8e;
     --dp-highlight-color: rgb(25 118 210 / 10%);
     --dp-range-between-dates-background-color: var(--dp-hover-color, #f3f3f3);
@@ -197,5 +217,9 @@ input ::placeholder {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
+
+.lembretes {
+    display: block;
+}
   
 </style>
