@@ -120,7 +120,7 @@ onMounted(() => {
         </div>
         <div class="shadow-md rounded-md p-6 lembretes">
             <ul class="list-[square] text-pink-500">
-                <li v-for="(array, chave) in Object.keys(lembretesPorData).sort((a, b) => new Date(b) - new Date(a))" :key="chave">
+                <li v-for="(array, chave) in Object.keys(lembretesPorData).sort((a, b) => new Date(a) - new Date(b))" :key="chave">
                         {{ array }}
                     <ul>
                         <li v-for="lembrete in lembretesPorData[array]" v-bind:key="lembrete.lembrete_id">
