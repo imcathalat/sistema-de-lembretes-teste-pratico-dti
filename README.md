@@ -66,7 +66,6 @@ source venv/bin/activate
    ```
 8. Migre o banco de dados:
 ```bash
-python manage.py makemigrations
 python manage.py migrate
 ```
 
