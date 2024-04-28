@@ -16,6 +16,11 @@ O sistema permite adição, exclusão e listaegem dos lembretes em ordem cronol�
 ## Interface
 ![Criação do BD no pgAdmin4](images/sistema-lembrete.png)
 
+## Versionamento do código
+O código foi versionado utilizando git através do terminal. A fim de manter a integridade do projeto, foram criadas duas branches para gerencia-lo:
+- Features: As atualizações foram desenvolvidas e testadas aqui.
+- Main: As funcionalidades já testadas ficavam aqui.
+
 ## Instalação
 
 Para executar o projeto localmente, siga as seguintes etapas:
@@ -146,7 +151,3 @@ source venv/bin/activate
    python manage.py test main
    ```
 
-## Versionamento do código
-O código foi versionado utilizando git através do terminal. A fim de manter a integridade do projeto, foram criadas duas branches para gerencia-lo:
-- Features: As atualizações foram desenvolvidas e testadas aqui.
-- Main: As funcionalidades já testadas ficavam aqui.
