@@ -2,10 +2,16 @@
 
 [![Django Badge](https://img.shields.io/badge/Built_with-Django-092E20?style=for-the-badge&logo=django)](https://www.djangoproject.com/)
 [![Vue.js Badge](https://img.shields.io/badge/Built_with-Vue.js-4FC08D?style=for-the-badge&logo=vue.js)](https://vuejs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12-blue.svg)](https://www.postgresql.org/)
 
 ## Descrição
 Este projeto é uma APIRestFul de um Sistema de Lembretes construído em Django Rest Framework no lado do servidor (backend) e Vue.js no lado do cliente (frontend). 
-O sistema permite adição, exclusão e listaegem dos lembretes em ordem cronológica.
+O sistema permite adição, exclusão e listagem dos lembretes em ordem cronológica.
+
+### Escolha das Tecnologias
+As tecnologias escolhidas para realizar o teste se basearam no meu atual conhecimento das ferramentas disponíveis no mercado para criação de API's RESTFul. 
+Considerei mais prudente trabalhar com algo que já tenho conhecimento prévio, uma vez que o meu tempo de dedicação ao teste não pôde ser integral.
+No entanto, gostaria de esclarecer que estou aberta ao aprendizado do C# e do React, e creio que entender o processo de construção de uma APIRestFul facilita o meu aprendizado de quaisquer ferramentas que tenham isso como propósito.
 
 ## Tecnologias Necessárias
 É necessário que o ambiente local possua algumas tecnologias já instaladas.
@@ -33,7 +39,7 @@ A primeira coisa a se fazer é configurar o projeto no lado servidor.
    https://github.com/imcathalat/sistema-de-lembretes-teste-pratico-dti.git
    ```
    
-2. Na pasta clonada raiz, crie e ative o ambiente virtual:
+2. Na pasta clonada raiz, crie e ative o ambiente virtual (É importante que seja na pasta que possui o diretório venv):
    
 No Windows:
  ```bash
@@ -70,7 +76,7 @@ source venv/bin/activate
    ```bash
    cd backend
    ```
-8. Migre o banco de dados:
+8. Migre o banco de dados (É importante que todos os comandos que inciam com python manage.py sejam realizados no diretório backend):
 ```bash
 python manage.py migrate
 ```
@@ -80,7 +86,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-10. Verifique se o servidor esta aberto na porta 8000: - É importante que esteja
+10. Verifique se o servidor esta aberto na porta 8000 (É imprescíndivel para o funcionamento da API):
     ```bash
     http://127.0.0.1:8000/
     ```
@@ -88,10 +94,10 @@ python manage.py runserver
 ## Frontend
 Com o servidor backend funcionando, é hora de colocar o frontend para funcionar. 
 
-Esse processo deve ser feito em outro terminal, uma vez que para a aplicação funcionar o servidor backend deve estar em funcionamento durante toda a execução.
+Esse processo deve ser feito em outro terminal, uma vez que para a aplicação funcionar o servidor backend deve estar em funcionamento durante toda a execução em consonância com o servidor frontend.
 A interação com o sistema será feita através do servidor frontend (link recebido no final).
 
-1. Ative o ambiente virtual na pasta raiz:
+1. Ative o ambiente virtual na pasta raiz (Na pasta que possui o diretório venv):
 
 No Windows:
   ```bash
@@ -109,7 +115,7 @@ No macOs Linux:
    cd frontend
    ```
 
-3. Instale as dependências:
+3. Instale as dependências (É importante que esse e o próximo comando sejam executados dentro da pasta frontend):
    ```bash
    npm install
    ```
@@ -119,7 +125,7 @@ No macOs Linux:
    npm run dev
    ```
    
-5. Digite a url fornecida pelo servidor no seu navegador: - Verifique se esta na porta 5173
+5. Digite a url fornecida pelo servidor no seu navegador (É importante que a porta seja 5173):
    ```bash
    http://localhost:5173/
    ```
@@ -146,7 +152,7 @@ source venv/bin/activate
    cd backend
    ```
 
-3. Execute o comando para rodar os testes:
+3. Execute o comando para rodar os testes (É importante que o comando seja executado dentro da pasta backend):
    ```bash
    python manage.py test main
    ```
