@@ -1,0 +1,109 @@
+@import '@/assets/_variables.scss';
+
+.lembretes {
+    display: block;
+}
+
+.card {
+    margin: auto 0;
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    display: block;
+    color: $title_color;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.lembrete-form label {
+    display: block;
+    margin-top: 0.6rem;
+}
+
+.lembrete-form {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    display: block;
+    color: $title_color;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.lembrete-form fieldset {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+    border: 1px solid $border_color;
+    padding: 20px;
+    background: $card_bg_color;
+    box-shadow: inset 0px 0px 15px $shaddow_color;
+    -moz-box-shadow: inset 0px 0px 15px $shaddow_color;
+    -webkit-box-shadow: inset 0px 0px 15px $shaddow_color;
+}
+
+.lembrete-form fieldset legend {
+    color: $title_color;
+    border-top: 1px solid $border_color;
+    border-left: 1px solid $border_color;
+    border-right: 1px solid $border_color;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: $card_bg_color;
+    padding: 0px 8px 3px 8px;
+    box-shadow: -0px -1px 2px $shaddow_color;
+    -moz-box-shadow: -0px -1px 2px $shaddow_color;
+    -webkit-box-shadow: -0px -1px 2px $shaddow_color;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.lembrete-form input[type=text],
+.lembrete-form input[type=date] {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid $input_border_color;
+    outline: none;
+    color: $input_color;
+    padding: 6px 30px 6px 12px;
+    box-shadow: inset 1px 1px 4px $input_shaddow_color;
+    -moz-box-shadow: inset 1px 1px 4px $input_shaddow_color;
+    -webkit-box-shadow: inset 1px 1px 4px $input_shaddow_color;
+    background: $input_bg_color;
+    width: 100%;
+    display: block;
+}
+
+.lembrete-form input[type=text]:hover,
+.lembrete-form input[type=date]:hover,
+.lembrete-form input[type=submit]:hover{
+    border-color: #C94A81;
+}
+
+li .pi-trash:hover {
+    color: black;
+}
+
+
+.lembrete-form input[type=submit],
+.lembrete-form input[type=button] {
+    background: $title_color;
+    border: 1px solid $input_border_color;
+    padding: 5px 15px;
+    color: $submit_text_color;
+    box-shadow: inset -1px -1px 3px $submit_shaddow_color;
+    -moz-box-shadow: inset -1px -1px 3px $submit_shaddow_color;
+    -webkit-box-shadow: inset -1px -1px 3px $submit_shaddow_color;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-weight: bold;
+    margin: 8% auto 0 auto;
+}
