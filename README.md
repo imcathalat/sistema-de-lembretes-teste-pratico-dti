@@ -16,7 +16,7 @@ No entanto, gostaria de esclarecer que estou aberta ao aprendizado do C# e do Re
 **Observações:**
 - O componente vue.js utilizado para renderizar o frontend do teste se chama 'Lembretes.vue' e se encontra no caminho 'src/components/Lembretes.vue' da pasta frontend.
 
-[pdf dos requisitos do teste prático](caminho/para/o/arquivo.pdf)
+[requisitos do teste prático](images/pdf-teste-pratico-dti.pdf)
 
 ## Tecnologias Necessárias
 É necessário que o ambiente local possua algumas tecnologias já instaladas.
@@ -25,7 +25,7 @@ No entanto, gostaria de esclarecer que estou aberta ao aprendizado do C# e do Re
 3. [Node.js](https://nodejs.org/en/download)
 
 ## Interface
-![Criação do BD no pgAdmin4](images/layout.png)
+![Criação do BD no pgAdmin4](images/layout-lembrete.png)
 
 ## Versionamento do código
 O código foi versionado utilizando git através do terminal. A fim de manter a integridade do projeto, foram criadas duas branches para gerencia-lo:
@@ -162,6 +162,6 @@ source venv/bin/activate
    python manage.py test main
    ```
 
-   ## Agradecimentos
-   Gostaria de Agradecer a equipe DTI por terem me notado no dia do TechTalent. Foi uma supresa muito agradável receber uma mensagem da Pâmela Alonso me comunicando sobre a possibilidade da participação na segunda etapa do processo seletivo da empresa. Foi um prazer realizar o teste e o aprendizado que ganhei colocando em prática os conhecimentos necessários para entrega-lo já fizeram todos os minutos valerem a pena. 🦋
+## Agradecimentos
+Gostaria de Agradecer a equipe DTI por terem me notado no dia do TechTalent. Foi uma supresa muito agradável receber uma mensagem da Pâmela Alonso me comunicando sobre a possibilidade da participação na segunda etapa do processo seletivo da empresa. Foi um prazer realizar o teste e o aprendizado que ganhei colocando em prática os conhecimentos necessários para entrega-lo já fizeram todos os minutos valerem a pena. 🦋
 
