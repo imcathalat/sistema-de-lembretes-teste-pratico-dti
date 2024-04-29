@@ -2,7 +2,7 @@
 
 [![Django Badge](https://img.shields.io/badge/Built_with-Django-092E20?style=for-the-badge&logo=django)](https://www.djangoproject.com/)
 [![Vue.js Badge](https://img.shields.io/badge/Built_with-Vue.js-4FC08D?style=for-the-badge&logo=vue.js)](https://vuejs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12-blue.svg)](https://www.postgresql.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12-336791?style=for-the-badge&logo=postgresql)](https://www.postgresql.org/)
 
 ## Descrição
 Este projeto é uma APIRestFul de um Sistema de Lembretes construído em Django Rest Framework no lado do servidor (backend) e Vue.js no lado do cliente (frontend). 
@@ -12,6 +12,11 @@ O sistema permite adição, exclusão e listagem dos lembretes em ordem cronoló
 As tecnologias escolhidas para realizar o teste se basearam no meu atual conhecimento das ferramentas disponíveis no mercado para criação de API's RESTFul. 
 Considerei mais prudente trabalhar com algo que já tenho conhecimento prévio, uma vez que o meu tempo de dedicação ao teste não pôde ser integral.
 No entanto, gostaria de esclarecer que estou aberta ao aprendizado do C# e do React, e creio que entender o processo de construção de uma APIRestFul facilita o meu aprendizado de quaisquer ferramentas que tenham isso como propósito.
+
+**Observações:**
+- O componente vue.js utilizado para renderizar o frontend do teste se chama 'Lembretes.vue' e se encontra no caminho 'src/components/Lembretes.vue' da pasta frontend.
+
+[Teste](caminho/para/o/arquivo.pdf)
 
 ## Tecnologias Necessárias
 É necessário que o ambiente local possua algumas tecnologias já instaladas.
@@ -156,4 +161,7 @@ source venv/bin/activate
    ```bash
    python manage.py test main
    ```
+
+   ## Agradecimentos
+   Gostaria de Agradecer a equipe DTI por terem me notado no dia do TechTalent. Foi uma supresa muito agradável receber uma mensagem da Pâmela Alonso me comunicando sobre a possibilidade da participação na segunda etapa do processo seletivo da empresa. Foi um prazer realizar o teste e o aprendizado que ganhei colocando em prática os conhecimentos necessários para entrega-lo já fizeram todos os minutos valerem a pena. 🦋
 
