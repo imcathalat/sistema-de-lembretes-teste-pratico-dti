@@ -16,7 +16,7 @@ No entanto, gostaria de esclarecer que estou aberta ao aprendizado do C# e do Re
 **Observações:**
 - O componente vue.js utilizado para renderizar o frontend do teste se chama 'Lembretes.vue' e se encontra no caminho 'src/components/Lembretes.vue' da pasta frontend.
 
-[Teste](caminho/para/o/arquivo.pdf)
+[pdf dos requisitos do teste prático](caminho/para/o/arquivo.pdf)
 
 ## Tecnologias Necessárias
 É necessário que o ambiente local possua algumas tecnologias já instaladas.
@@ -25,7 +25,7 @@ No entanto, gostaria de esclarecer que estou aberta ao aprendizado do C# e do Re
 3. [Node.js](https://nodejs.org/en/download)
 
 ## Interface
-![Criação do BD no pgAdmin4](images/sistema-lembrete.png)
+![Criação do BD no pgAdmin4](images/layout.png)
 
 ## Versionamento do código
 O código foi versionado utilizando git através do terminal. A fim de manter a integridade do projeto, foram criadas duas branches para gerencia-lo:
