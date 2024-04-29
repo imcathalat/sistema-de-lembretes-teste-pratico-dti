@@ -10,13 +10,12 @@ export default defineConfig({
   ],
   css: {
     preprocessorOptions:{
-      scss: {aditionalData: `@import "src/scss/_variables.scss";`}
+      scss: {additionalData: `@import "src/assets/_variables.scss";`}
     }
   },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  base: './',
+  }
 })
